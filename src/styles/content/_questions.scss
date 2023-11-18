@@ -1,5 +1,5 @@
-@use "../base/variables" as *;
-@use "../base/mixins" as m;
+@use '../base/variables' as *;
+@use '../base/mixins' as m;
 
 .questions {
   margin-bottom: 15rem;
@@ -34,10 +34,10 @@
       color: $blueText;
       margin-top: 5.2rem;
 
-      @include m.desktop{
+      @include m.desktop {
         margin-top: 9rem;
       }
-      @include m.large{
+      @include m.large {
         margin-top: 13rem;
       }
     }
@@ -58,47 +58,81 @@
     @include m.flexCol2;
     gap: 2rem;
 
-    &-box {
+    .questions__box {
       width: 100%;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
       padding: 2rem;
       color: $blueText;
       border-radius: 20px;
       border: 0.5px solid $border;
       box-shadow: 0px 25px 50px 0px rgba(22, 25, 79, 0.05);
+      cursor: pointer;
 
       @include m.tablet {
         width: 85%;
         padding: 2rem;
       }
       @include m.desktop {
-        width: 100%;
+        width: 86rem;
         padding: 3rem 4rem;
         gap: 10rem;
       }
 
-      & h3 {
-        font-size: 1.5rem;
-        text-align: left;
+      &-header {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
 
-        @include m.tablet {
-          font-size: 1.8rem;
+        & h3 {
+          font-size: 1.6rem;
+          text-align: left;
+
+          @include m.tablet {
+            font-size: 1.8rem;
+          }
+          @include m.desktop {
+            font-size: 2rem;
+          }
         }
-        @include m.desktop {
-          font-size: 2rem;
+
+        & img {
+          cursor: pointer;
+          width: 1.6rem;
+          transition: all 400ms ease;
+
+          @include m.tablet {
+            width: 2.5rem;
+          }
+
+          &.rotate {
+            transform: rotate(45deg);
+          }
         }
       }
 
-      & img {
-        cursor: pointer;
-        width: 1.5rem;
+      &-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 400ms ease;
 
-        @include m.tablet {
-          width: 2.5rem;
+        p {
+          text-align: justify;
+          font-size: 1.5rem;
+          margin-top: 1.5rem;
+
+          @include m.tablet {
+            font-size: 1.6rem;
+          }
+          @include m.desktop {
+            margin-top: 2.5rem;
+            font-size: 1.8rem;
+          }
         }
+      }
+
+      &-content.expanded {
+        max-height: 90rem;
+        transition: all 2s ease;
       }
     }
   }

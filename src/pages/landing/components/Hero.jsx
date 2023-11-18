@@ -4,10 +4,9 @@ import {
   phoneDesk,
   phoneMob,
   phoneTablet,
-} from "../../assets/images";
-import { FadeIn } from "./FadeIn";
+} from "../../../assets/images";
 
-export const HeroPage = () => {
+export const Hero = () => {
   return (
     <>
       <div className="hero">

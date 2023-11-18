@@ -11,9 +11,9 @@ import {
   rollFigure,
   sergiosLogo,
   starFigure,
-} from "../../assets/images";
+} from "../../../assets/images";
 
-export const ClientsPage = () => {
+export const Clients = () => {
   return (
     <>
       <div className="clients">

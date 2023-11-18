@@ -29,7 +29,7 @@ export { default as raphaellaLogo } from "./client-raphaellaBooz.png";
 export { default as acaiLabLogo } from "./client-acaiLab.png";
 
 //QuestionsPage
-export { default as plusIcon } from "./plus-icon.svg";
+export { default as plusIcon } from "./plus-icon.svg"; 
 export { default as wave } from "./wave.svg";
 export { default as waveBlack } from "./wave-black.svg";
 
