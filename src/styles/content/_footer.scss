@@ -11,12 +11,12 @@
       top: -10rem;
     }
     @include m.desktop {
-      top: -13rem;
+      top: -15rem;
     }
   }
 
   &__container {
-    @include m.flexCol2;
+    @include m.flexCol;
     gap: 2rem;
     color: $white;
 
@@ -38,6 +38,10 @@
     &-btn {
       @include m.btn-gradient;
       margin-bottom: 2rem;
+
+      @include m.desktop {
+        filter: none;
+      }
     }
 
     &-icon {

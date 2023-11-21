@@ -7,9 +7,11 @@
 
   &__img {
     width: 15rem;
+    height: 40px;
 
     @include m.tablet {
       width: 25rem;
+      height: 66.5px;
     }
 
     @include m.desktop {

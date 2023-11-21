@@ -11,9 +11,10 @@ export const Footer = () => {
       <footer className='footer'>
         <img className='footer__wave' src={waveBlack} alt='wave' />
         <div className='footer__container container'>
+          
           <img className='footer__container-logo' src={logoFooter} alt='logo' />
 
-          <button className='footer__container-btn'>Estoy Listo</button>
+          <button className='footer__container-btn'>Contáctanos</button>
 
           <div>
             <a
@@ -40,7 +41,7 @@ export const Footer = () => {
               />
             </a>
             <p className='footer__container-copyright'>
-              Copyright © 2023 - All rights reserved
+              Copyright © {new Date().getFullYear()} - All rights reserved
             </p>
           </div>
         </div>

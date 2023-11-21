@@ -4,11 +4,11 @@
 .clients {
   background-color: $background;
   color: $white;
-  padding: 15rem 0 25rem;
+  padding: 15rem 0 25rem 0;
   position: relative;
 
   @include m.tablet {
-    padding: 15rem 0 40rem;
+    padding: 15rem 0 47rem 0;
   }
 
   &__figure {

@@ -17,12 +17,12 @@
       top: -10rem;
     }
     @include m.desktop {
-      top: -13rem;
+      top: -15rem;
     }
   }
 
   &__container {
-    @include m.flexCol2;
+    @include m.flexCol;
     gap: 3rem;
     @include m.tablet {
       gap: 6rem;
@@ -35,10 +35,10 @@
       margin-top: 5.2rem;
 
       @include m.desktop {
-        margin-top: 9rem;
+        margin-top: 10rem;
       }
       @include m.large {
-        margin-top: 13rem;
+        margin-top: 15rem;
       }
     }
     & p {
@@ -55,7 +55,7 @@
   }
 
   &__list {
-    @include m.flexCol2;
+    @include m.flexCol;
     gap: 2rem;
 
     .questions__box {

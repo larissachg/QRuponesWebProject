@@ -5,6 +5,7 @@ import {
   phoneMob,
   phoneTablet,
 } from "../../../assets/images";
+import { FadeIn } from "../../../components";
 
 export const Hero = () => {
   return (
@@ -19,64 +20,59 @@ export const Hero = () => {
 
         <div className="hero__content content container">
           <div className="content__info">
-            {/* <FadeIn delay={0.2} direction='down'> */}
-            <motion.h1
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 200,
-                },
-              }}
-              initial="hidden"
-              transition={{
-                duration: 1,
-                type: "tween",
-                ease: [0.25, 0.25, 0.25, 0.75],
-              }}
-              animate={{ y: 0, opacity: 1 }}
-              className="content__info-title"
-            >
+            <FadeIn as="h1" duration={3000} className="content__info-title">
               Potencia la reCompra y fidelización de tus clientes
-            </motion.h1>
-            {/* </FadeIn> */}
+            </FadeIn>
 
-            <motion.p 
-            initial={{
-                opacity: 0,
-            }} 
-            transition={{
-              duration: 3,
-            }}
-            animate={{ opacity: 1 }}
-            className="content__info-slogan">
+            <FadeIn
+              as="p"
+              duration={3000}
+              delay={300}
+              className="content__info-slogan"
+            >
               Tu negocio crece, tus clientes ahorran.
-            </motion.p>
+            </FadeIn>
 
             <button className="content__info-btn">Empezar</button>
           </div>
 
           <motion.img
-            initial={{ y: 500 }}
-            transition={{ duration: 1 }}
-            animate={{ y: 0 }}
+            initial={{ translateY: 0 }}
+            animate={{ translateY: -40 }}
+            transition={{
+              repeat: Infinity,
+              duration: 2,
+              ease: "easeInOut",
+              repeatType: "mirror",
+            }}
             className="content__img content__img-desk"
             src={phoneDesk}
             alt="Iphone"
           />
 
           <motion.img
-            initial={{ y: 500 }}
-            transition={{ duration: 1 }}
-            animate={{ y: 0 }}
+            initial={{ translateY: 10 }}
+            animate={{ translateY: -10 }}
+            transition={{
+              repeat: Infinity,
+              duration: 2,
+              ease: "easeInOut",
+              repeatType: "mirror",
+            }}
             className="content__img content__img-tablet"
             src={phoneTablet}
             alt="Iphone"
           />
 
           <motion.img
-            initial={{ y: 500 }}
-            transition={{ duration: 1 }}
-            animate={{ y: 0 }}
+            initial={{ translateY: 10 }}
+            animate={{ translateY: -10 }}
+            transition={{
+              repeat: Infinity,
+              duration: 2,
+              ease: "easeInOut",
+              repeatType: "mirror",
+            }}
             className="content__img content__img-mob"
             src={phoneMob}
             alt="Iphone"
