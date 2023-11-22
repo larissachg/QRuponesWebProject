@@ -68,30 +68,11 @@
     margin-right: 12rem;
     margin-left: 5rem;
 
-    &-mob {
-      display: block;
-      @include m.tablet {
-        display: none;
-      }
-    }
-
-    &-tablet {
-      display: none;
+    @include m.tablet {
       margin-right: 15rem;
-      @include m.tablet {
-        display: block;
-      }
-      @include m.desktop {
-        display: none;
-      }
     }
-
-    &-desk {
-      display: none;
+    @include m.desktop {
       margin: 0;
-      @include m.desktop {
-        display: block;
-      }
     }
   }
 }

@@ -5,7 +5,9 @@ import {
   phoneMob,
   phoneTablet,
 } from "../../../assets/images";
-import { FadeIn } from "../../../components";
+import { isMobile, isDesktop } from 'react-device-detect';
+
+import { FadeIn, MyOptimizedImage } from "../../../components";
 
 export const Hero = () => {
   return (
@@ -13,7 +15,13 @@ export const Hero = () => {
       <div className="hero">
         <div className="header container">
           <a href="#">
-            <img className="header__img" src={logoHeader} alt="QRupones logo" />
+            <MyOptimizedImage srcDesk={logoHeader} preLoad={true}>
+              <img
+                className="header__img"
+                alt="QRupones logo"
+                loading="eager"
+              />
+            </MyOptimizedImage>
           </a>
           <button className="header__button">Ingresar</button>
         </div>
@@ -36,47 +44,27 @@ export const Hero = () => {
             <button className="content__info-btn">Empezar</button>
           </div>
 
-          <motion.img
-            initial={{ translateY: 0 }}
-            animate={{ translateY: -40 }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
-              ease: "easeInOut",
-              repeatType: "mirror",
-            }}
-            className="content__img content__img-desk"
-            src={phoneDesk}
-            alt="Iphone"
-          />
+          <MyOptimizedImage
+            srcDesk={phoneDesk}
+            srcMob={phoneMob}
+            srcTablet={phoneTablet}
+            preLoad={isDesktop}
+          >
+            <motion.img
+              initial={{ translateY: isMobile ? 10 : 0 }}
+              animate={{ translateY: isMobile ? -10 : -40 }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                ease: "easeInOut",
+                repeatType: "mirror",
+              }}
+              className="content__img"
+              alt="Iphone"
+              loading="eager"
+            />
+          </MyOptimizedImage>
 
-          <motion.img
-            initial={{ translateY: 10 }}
-            animate={{ translateY: -10 }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
-              ease: "easeInOut",
-              repeatType: "mirror",
-            }}
-            className="content__img content__img-tablet"
-            src={phoneTablet}
-            alt="Iphone"
-          />
-
-          <motion.img
-            initial={{ translateY: 10 }}
-            animate={{ translateY: -10 }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
-              ease: "easeInOut",
-              repeatType: "mirror",
-            }}
-            className="content__img content__img-mob"
-            src={phoneMob}
-            alt="Iphone"
-          />
         </div>
       </div>
     </>

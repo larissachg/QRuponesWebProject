@@ -8,7 +8,7 @@ import {
   whatsApp,
 } from "../../../assets/images";
 import { InfoCard, FadeIn } from "../../../components";
-import { isMobile } from 'react-device-detect';
+import { isMobileOnly } from 'react-device-detect';
 
 export const Info = () => {
   return (
@@ -35,7 +35,7 @@ export const Info = () => {
               />
             </FadeIn>
 
-            <FadeIn as="div" delay={500} origin={`${isMobile ? 'right' : 'left'}`}>
+            <FadeIn as="div" delay={500} origin={`${isMobileOnly ? 'right' : 'left'}`}>
               <InfoCard
                 img={marketing}
                 title={"Marketing y Publicidad"}
@@ -66,7 +66,7 @@ export const Info = () => {
               />
             </FadeIn>
 
-            <FadeIn as="div" delay={500} origin={`${isMobile ? 'left' : 'right'}`}>
+            <FadeIn as="div" delay={500} origin={`${isMobileOnly ? 'left' : 'right'}`}>
               <InfoCard
                 img={whatsApp}
                 title={"Envíos sin límites"}
